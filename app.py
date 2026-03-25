@@ -11,7 +11,10 @@ from datetime import datetime
 
 app = Flask(__name__, template_folder="templates", static_folder="static")
 
-DB_PATH = os.path.join(os.path.dirname(__file__), "instance", "portfolio.db")
+if os.environ.get('RENDER'):
+    DB_PATH = '/tmp/portfolio.db'
+else:
+    DB_PATH = os.path.join(os.path.dirname(__file__), "instance", "portfolio.db")
 
 # ─── DB PIPELINE ─────────────────────────────────────────────────────────────
 
