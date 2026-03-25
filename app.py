@@ -100,7 +100,8 @@ def stats():
 
 # ─── ENTRY POINT ─────────────────────────────────────────────────────────────
 
+init_db()
+
 if __name__ == "__main__":
-    init_db()
     print("🚀  Portfolio server → http://localhost:5000")
     app.run(debug=True, port=5000)
